@@ -1,25 +1,25 @@
 @media (max-width: 1420px) {
-  	.footer__title {
-  		font-size: 12px;
-  	}
+	.footer__title {
+		font-size: 12px;
+	}
 
-  	.footer__tel {
-  		font-size: 14px;
-  	}
+	.footer__tel {
+		font-size: 14px;
+	}
 }
 
 @media (max-width: 1320px) {
-  	.footer__title {
-  		font-size: 11px;
-  	}
+	.footer__title {
+		font-size: 11px;
+	}
 
-  	.footer__tel {
-  		font-size: 13px;
-  	}
+	.footer__tel {
+		font-size: 13px;
+	}
 }
 
 @media (max-width: 992px) {
-  	.card-item {
+	.card-item {
 		width: 50%;
 		margin-top: 50px;
 	}
@@ -30,53 +30,64 @@
 
 	.nav {
 		display: none;
-    width: 100%;
-    flex-direction: column;
-
-    background-color: rgba(33, 54, 117, 1);
-    text-align: right;
-    
-    position: absolute;
-    right: 0;
-    top: 13%;
 	}
 
-  .nav__link {
-    padding: 9px 15px;
-  }
+	.nav__link {
+		padding: 10px 0;
+		font-size: 18px;
+		font-weight: 700;
+		color: #222222;
+		text-decoration: none;
+		opacity: 0.75;
 
-  .nav.show {
-    display: flex;
-  }
+		transition: opacity 0.1s linear;
+	}
 
-  .burger {
-    display: block;
-    margin-left: auto;
-    margin-right: 2%;
-  }
+	.nav.show {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 10;
+		background: #fff;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+		padding: 100px 15px;
+	}
 
-  .fz--color {
-  	font-size: 30px !important;
-  	color: rgba(33, 54, 117, 0.9);
+	.burger {
+		display: block;
+		margin-left: auto;
+		margin-right: 5%;
+		margin-top: -15%;
+	}
+
+	.fz--color {
+		font-size: 30px !important;
+		color: rgba(33, 54, 117, 0.9);
 	}
 }
 
 @media (max-width: 767px) {
-  	.header__title {
-  		font-size: 26px;
-  	}
+	.header__title {
+		font-size: 26px;
+	}
 
-  	.flex__title {
-    	font-size: 22px;
+	.flex__title {
+		font-size: 22px;
 	}
 
 	.card__item {
-  		width: 100%;
+		width: 100%;
 	}
 }
 
 @media (max-width: 660px) {
-  	.card-item {
+	.card-item {
 		width: 100%;
 		margin-top: 50px;
 	}
@@ -100,56 +111,55 @@
 	}
 
 	.footer__title {
-  		font-size: 11px;
-  	}
+		font-size: 11px;
+	}
 
-  	.footer__tel {
-  		font-size: 13px;
-  	}
+	.footer__tel {
+		font-size: 13px;
+	}
 }
 
-
 @media (max-width: 540px) {
-  .nav {
-    top: 17%;
-  }
+	.nav {
+		top: 17%;
+	}
 
-  .flex__item:nth-child(2) {
-    width: 100%;
-    margin-bottom: 10px;
+	.flex__item:nth-child(2) {
+		width: 100%;
+		margin-bottom: 10px;
 	}
 
 	.fa-facebook-f {
 		margin-left: 90%;
 	}
 
-  .flex__row {
-    border-radius: 0px;
-    box-shadow: none;
-  }
+	.flex__row {
+		border-radius: 0px;
+		box-shadow: none;
+	}
 
-  .flex__center__row {
-    flex-wrap: wrap;
-  }
+	.flex__center__row {
+		flex-wrap: wrap;
+	}
 
-  .flex__inner {
-    border-radius: 0px;
-  }
+	.flex__inner {
+		border-radius: 0px;
+	}
 
-  .flex__item:nth-child(1) {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-  }
+	.flex__item:nth-child(1) {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 10px;
+	}
 
-  .flex__subtitle {
-    font-size: 19px;
-  }
+	.flex__subtitle {
+		font-size: 19px;
+	}
 
-  .flex__title {
-    font-size: 22px;
-  }
+	.flex__title {
+		font-size: 22px;
+	}
 }
 
 @media (max-width: 445px) {
@@ -157,63 +167,62 @@
 		width: 100%;
 		height: auto;
 		padding: 0;
-	}	
+	}
 
 	.flex__center__row {
-  		flex-wrap: wrap;
-  	}
-
-  	.flex__item {
-  		width: 100%;
-  	}	
-
-  	.flex__cart {
-    	 border-radius: 0px; 
-    	 transition: none; 
-    	 padding: 0; 
-    	 border: none;
+		flex-wrap: wrap;
 	}
 
-	.flex__inner:hover .flex__cart { 
-  		border: none;
+	.flex__item {
+		width: 100%;
 	}
 
+	.flex__cart {
+		border-radius: 0px;
+		transition: none;
+		padding: 0;
+		border: none;
+	}
+
+	.flex__inner:hover .flex__cart {
+		border: none;
+	}
 }
 
 @media (max-width: 440px) {
 	.header__title {
-  		font-size: 22px;
-  		margin-left: 10px;
-  	}	
+		font-size: 22px;
+		margin-left: 10px;
+	}
 }
 
 @media (max-width: 380px) {
 	.header__title {
-  		font-size: 18px;
-  		margin-left: 5px;
-  	}
+		font-size: 18px;
+		margin-left: 5px;
+	}
 }
 
 @media (max-width: 360px) {
-  .nav {
-    top: 19%;
-  }
+	.nav {
+		top: 19%;
+	}
 }
 
 @media (max-width: 330px) {
 	.header__title {
-  		font-size: 17px;
-  		margin-left: 0px;
-  	}	
+		font-size: 17px;
+		margin-left: 0px;
+	}
 
-   .nav {
-    top: 21%;
-    }
+	.nav {
+		top: 21%;
+	}
 }
 
 @media (max-width: 280px) {
 	.header__title {
-  		font-size: 15px;
-  		margin-left: 0px;
-  	}	
+		font-size: 15px;
+		margin-left: 0px;
+	}
 }
