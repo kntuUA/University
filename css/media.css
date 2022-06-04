@@ -232,4 +232,8 @@
 		font-size: 15px;
 		margin-left: 0px;
 	}
+
+	.flex__inner {
+		padding: 0;
+	}
 }
