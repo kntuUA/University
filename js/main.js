@@ -1,12 +1,14 @@
-const navToggle = document.querySelector('#navToggle');
-const nav = document.querySelector('#nav');
+"use strict";
 
-navToggle.addEventListener('click', function (event) {
+const navToggle = document.querySelector("#navToggle");
+const nav = document.querySelector("#nav");
+
+navToggle.addEventListener("click", function (event) {
   event.preventDefault();
-  nav.classList.toggle('show');
+  nav.classList.toggle("show");
 });
 
-const yearElement = document.querySelector('#year');
+const yearElement = document.querySelector("#year");
 
 setInterval(function () {
   yearElement.textContent = new Date().getFullYear();
