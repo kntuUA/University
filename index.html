@@ -1,160 +1,72 @@
 <!DOCTYPE html>
 <html lang="uk">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/media.css" />
-    <link rel="icon" href="./img/favicon/1.png" type="image/png" />
-    <title>ЦНТУ</title>
-  </head>
-  <body>
-    <header class="header">
-      <div class="container">
-        <div class="header__inner">
-          <div class="header__logo">
-            <a href="https://kntuua.github.io/University/"
-              ><img src="img/Gerb.webp" alt="#"
-            /></a>
-            <a href="https://kntuua.github.io/University/"
-              ><h1 class="header__title">
-                Центральноукраїнський національний <br />
-                технічний університет
-              </h1></a
-            >
-          </div>
-          <nav class="nav" id="nav">
-            <a class="nav__link" href="http://www.kntu.kr.ua/?view=univer&id=1"
-              >Університет</a
-            >
-            <a class="nav__link" href="http://www.kntu.kr.ua/?view=abitur&id=1"
-              >Абітурієнту</a
-            >
-            <a class="nav__link" href="http://www.kntu.kr.ua/?view=fakult&id=1"
-              >Факультети</a
-            >
-            <a class="nav__link" href="http://www.kntu.kr.ua/?view=science&id=1"
-              >Наукова діяльність</a
-            >
-            <a
-              class="nav__link"
-              href="http://www.kntu.kr.ua/?view=science&id=19"
-              >Аспіранту</a
-            >
-            <a class="nav__link" href="http://www.kntu.kr.ua/?view=stud&id=1"
-              >Студенту</a
-            >
-            <a class="nav__link" href="http://moodle.kntu.kr.ua/"
-              >Дист. навчання</a
-            >
-          </nav>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вступна кампанія | ЦНТУ</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/021c6d66dc.js" crossorigin="anonymous" defer></script>
+  
+  <link rel="stylesheet" href="css/style.css">
 
-          <button class="burger" type="button" id="navToggle">
-            <span class="burger__item">Menu</span>
-          </button>
+  <script src="js/components.js"></script>
+</head>
+<body>
+
+  <site-header></site-header>
+
+  <main class="main">
+    <section class="hero">
+      <div class="container hero__container">
+        <span class="badge">Вступ 2026</span>
+        <h1 class="hero__title">Обери своє майбутнє з ЦНТУ</h1>
+        <p class="hero__subtitle">Якісна освіта, сучасні спеціальності та реальні перспективи для кожного абітурієнта.</p>
+      </div>
+      <div class="wave-bottom">
+        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,42.7C1120,32,1280,32,1360,32L1440,32L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z" fill="#f8fafc"></path>
+        </svg>
+      </div>
+    </section>
+
+    <section class="admission-cards">
+      <div class="container container--small">
+        <div class="cards-grid">
+          
+          <article class="card">
+            <div class="card__image-wrapper bg-gradient-blue">
+              <img src="img/specialtiesTwo/1.webp" alt="Бакалаврат" class="card__img" loading="lazy">
+            </div>
+            <div class="card__content">
+              <div class="card__tag">Базова вища освіта</div>
+              <h2 class="card__title">Ступінь БАКАЛАВРА</h2>
+              <p class="card__desc">Для випускників шкіл, ліцеїв та коледжів.</p>
+              <a href="https://kntu.kr.ua/abiturientu/vstup-dlya-zdobuttya-stupenya-bakalavra" class="btn btn--primary">Дізнатись більше <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__image-wrapper bg-gradient-green">
+              <img src="img/specialtiesTwo/2.webp" alt="Магістратура" class="card__img" loading="lazy">
+            </div>
+            <div class="card__content">
+              <div class="card__tag">Повна вища освіта</div>
+              <h2 class="card__title">Ступінь МАГІСТРА</h2>
+              <p class="card__desc">Для тих, хто вже має диплом бакалавра.</p>
+              <a href="https://kntu.kr.ua/abiturientu/vstup-dlya-zdobuttya-stupenya-magistra" class="btn btn--accent">Дізнатись більше <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </article>
+
         </div>
       </div>
-    </header>
+    </section>
+  </main>
 
-    <div class="container__small">
-      <div class="flex__row">
-        <div class="flex__inner w--100">
-          <div class="flex__cart">
-            <h1 class="flex__title fz--color">Сторінка абітурієнта</h1>
-            <div class="card__inner">
-              <div class="card__item">
-                <div class="price__card">
-                  <img
-                    class="img__card"
-                    src="img/specialtiesTwo/1.webp"
-                    alt="#"
-                  />
-                  <p class="color__p lin__h">
-                    Вступ для здобуття ступеня БАКАЛАВРА
-                  </p>
-                  <a href="./applicant/bachelor.html" class="custom-btn btn-3"
-                    ><span>Дізнатись більше</span></a
-                  >
-                </div>
-              </div>
+  <site-footer></site-footer>
 
-              <div class="card__item">
-                <div class="price__card">
-                  <img
-                    class="img__card"
-                    src="img/specialtiesTwo/2.webp"
-                    alt="#"
-                  />
-                  <p class="color__p lin__h">
-                    Вступ для здобуття ступеня МАГІСТРА
-                  </p>
-
-                  <a href="./applicant/master.html" class="custom-btn btn-3"
-                    ><span>Дізнатись більше</span></a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <footer class="footer">
-      <div class="container">
-        <div class="footer__inner">
-          <div class="footer__block">
-            <h4 class="footer__title">
-              Приймальна комісія працює щодня, крім суботи та неділі.
-            </h4>
-            <div class="footer__tel">
-              <div>
-                Телефони приймальної комісії: (095) 078-59-00, (0522) 55-93-13
-              </div>
-              <div>
-                Телефони центру довузівської підготовки: (095) 086-24-57 (0522)
-                55-50-18
-              </div>
-            </div>
-          </div>
-          <div class="footer__block">
-            <h4 class="footer__title">«ЦНТУ» в соцмережах:</h4>
-            <a
-              href="https://www.facebook.com/CNTU.kr.ua/?ref=bookmarks"
-              target="_blank"
-              ><i class="fab fa-facebook"></i
-            ></a>
-            <a href="https://twitter.com/CNTU1929" target="_blank"
-              ><i class="fab fa-twitter"></i
-            ></a>
-            <a
-              href="https://www.youtube.com/channel/UCOqbluXSF1GpiwkOOWkyydQ"
-              target="_blank"
-              ><i class="fab fa-youtube"></i
-            ></a>
-            <a href="https://www.instagram.com/cntu.kr.ua/" target="_blank"
-              ><i class="fab fa-instagram"></i
-            ></a>
-          </div>
-          <div class="footer__block">
-            <h4 class="footer__title">
-              © <span id="year"></span> «ЦНТУ» Всі права захищено.
-            </h4>
-            <div class="footer__text">
-              <p>
-                Використання матеріалів цього сайту можливе тільки з посиланням
-                на джерело.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <script src="js/main.js"></script>
-    <script
-      src="https://kit.fontawesome.com/021c6d66dc.js"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+  <script src="js/main.js"></script>
+</body>
 </html>
