@@ -1,0 +1,211 @@
+/* 12. RESPONSIVE ---------------------------------------------------------- */
+
+@media (max-width: 1200px) {
+  .programs__grid {
+    gap: 30px;
+  }
+
+  .card__content {
+    padding: 30px 24px;
+  }
+}
+
+/* Tablets: five nav items + switchers must fit without horizontal scroll */
+@media (max-width: 1024px) {
+  .header__container {
+    gap: 16px;
+  }
+
+  .nav__list {
+    gap: 16px;
+  }
+
+  .nav__link {
+    font-size: 14px;
+  }
+}
+
+/* Narrow tablets: long Ukrainian/Polish nav labels + language menu */
+@media (max-width: 880px) {
+  .header__container {
+    gap: 12px;
+  }
+
+  .nav__list {
+    gap: 12px;
+  }
+
+  .nav__link {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero {
+    padding-block: 100px 50px;
+  }
+
+  .programs__grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  }
+
+  .footer__container {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+/* Mobile — keep in sync with MOBILE_MEDIA in assets/js/app.js */
+@media (max-width: 768px) {
+  /* Without JS the nav simply wraps below the logo: content stays reachable */
+  .header__container {
+    flex-wrap: wrap;
+  }
+
+  .nav {
+    order: 3;
+    inline-size: 100%;
+  }
+
+  .nav__list {
+    flex-wrap: wrap;
+    gap: 4px 20px;
+    justify-content: center;
+  }
+
+  .nav__link {
+    padding-block: 12px;
+    font-size: 16px;
+  }
+
+  .nav__link::after {
+    display: none;
+  }
+
+  /* With JS: collapsible drop-down menu */
+  .js .header__container {
+    flex-wrap: nowrap;
+  }
+
+  .js .burger {
+    display: flex;
+  }
+
+  .js .nav {
+    position: absolute;
+    inset-block-start: 100%;
+    inset-inline-start: 0;
+    max-block-size: 0;
+    overflow: hidden;
+    visibility: hidden;
+    background: var(--nav-mobile-bg);
+    box-shadow: 0 10px 20px rgb(0 0 0 / 8%);
+    transition:
+      max-block-size 0.4s ease,
+      visibility 0s linear 0.4s;
+  }
+
+  .js .nav.is-open {
+    max-block-size: calc(100vh - var(--header-h));
+    overflow-y: auto;
+    visibility: visible;
+    transition: max-block-size 0.4s ease;
+  }
+
+  .js .nav__list {
+    flex-direction: column;
+    padding-block: 16px;
+    text-align: center;
+  }
+
+  .hero {
+    padding-block: 90px 40px;
+  }
+
+  .hero__badge {
+    margin-block-end: 15px;
+    padding: 5px 12px;
+    font-size: 12px;
+  }
+
+  .hero__title {
+    margin-block-end: 15px;
+  }
+
+  .hero__wave svg {
+    block-size: 40px;
+  }
+
+  .programs {
+    padding-block: 40px 60px;
+  }
+
+  .card__media {
+    block-size: 200px;
+    padding: 20px;
+  }
+
+  .footer__container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-block: 50px 30px;
+    text-align: center;
+  }
+
+  .footer__list > *,
+  .footer__socials {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-inline: 16px;
+  }
+
+  .header__container {
+    gap: 8px;
+  }
+
+  .header__actions {
+    gap: 4px;
+  }
+
+  .logo {
+    gap: 8px;
+  }
+
+  .logo__img {
+    inline-size: 40px;
+  }
+
+  .logo__text {
+    font-size: 18px;
+  }
+
+  .lang-menu__button {
+    gap: 4px;
+    min-inline-size: 40px;
+    block-size: 40px;
+    padding-inline: 8px;
+    font-size: 13px;
+  }
+
+  .notice {
+    padding-inline: 16px 44px;
+    text-align: start;
+  }
+
+  .card__content {
+    padding: 24px 16px;
+  }
+
+  .card__title {
+    font-size: 20px;
+  }
+
+  .btn {
+    padding: 12px 20px;
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,157 @@
+/* 14. SECRET TERMINAL (assets/js/features/terminal.js) ---------------------------------- */
+
+.terminal {
+  --term-green: #3f6;
+  --term-dim: #8fd9a3;
+
+  position: fixed;
+  inset: auto 0 0;
+  inline-size: 100%;
+  max-inline-size: 100%;
+  block-size: min(62dvh, 560px);
+  max-block-size: 100dvh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--term-green);
+  background: #050805;
+  border: 0;
+  border-block-start: 1px solid rgb(51 255 102 / 45%);
+  box-shadow: 0 -10px 40px rgb(0 0 0 / 50%);
+}
+
+.terminal[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.terminal::backdrop {
+  background: rgb(0 0 0 / 45%);
+}
+
+.terminal :focus-visible {
+  outline-color: var(--term-green);
+}
+
+.terminal__bar {
+  display: flex;
+  flex-shrink: 0;
+  gap: 12px;
+  align-items: center;
+  padding-block: 4px;
+  padding-inline: 12px 4px;
+  background: #0d140e;
+  border-block-end: 1px solid rgb(51 255 102 / 20%);
+}
+
+.terminal__dots {
+  display: flex;
+  gap: 6px;
+}
+
+.terminal__dots i {
+  inline-size: 10px;
+  block-size: 10px;
+  background: #2b3a2e;
+  border-radius: 50%;
+}
+
+.terminal__title {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--term-dim);
+}
+
+.terminal__close {
+  display: grid;
+  place-items: center;
+  inline-size: 40px;
+  block-size: 40px;
+  font-size: 22px;
+  color: var(--term-dim);
+  border-radius: 4px;
+}
+
+.terminal__close:hover {
+  color: var(--term-green);
+  background: rgb(51 255 102 / 10%);
+}
+
+.terminal__output {
+  flex: 1;
+  padding: 12px 16px 4px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.terminal__echo {
+  color: #d6ffe0;
+}
+
+.terminal__error {
+  color: #ff8a8a;
+}
+
+.terminal__motd {
+  color: var(--term-dim);
+}
+
+.terminal__form {
+  display: flex;
+  flex-shrink: 0;
+  gap: 8px;
+  align-items: center;
+  padding: 4px 16px 12px;
+}
+
+.terminal__prompt {
+  flex-shrink: 0;
+  color: #7ab8ff;
+  white-space: nowrap;
+}
+
+.terminal__input {
+  flex: 1;
+  min-inline-size: 0;
+  padding: 4px 0;
+  font: inherit;
+  font-size: max(16px, 1em); /* ≥ 16px: no zoom-on-focus on iOS */
+  color: #d6ffe0;
+  caret-color: var(--term-green);
+  caret-shape: block;
+  background: transparent;
+  border: 0;
+  outline: none;
+}
+
+.terminal__input:focus-visible {
+  outline: none;
+}
+
+.terminal__form:focus-within {
+  box-shadow: inset 2px 0 0 var(--term-green);
+}
+
+@media (max-width: 480px) {
+  .terminal {
+    block-size: min(70dvh, 560px);
+    font-size: 13px;
+  }
+
+  .terminal__output,
+  .terminal__form {
+    padding-inline: 10px;
+  }
+
+  .terminal__prompt {
+    max-inline-size: 45%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

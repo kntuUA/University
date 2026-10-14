@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kntuua.github.io/University/sitemap.xml

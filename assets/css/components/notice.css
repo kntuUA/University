@@ -1,0 +1,42 @@
+/* 6. NOTICE (scrolls away; only the header is sticky) -------------------- */
+
+.notice {
+  position: relative;
+  padding-block: 8px;
+  padding-inline: 48px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  background: var(--notice-bg);
+}
+
+.notice a {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.notice :focus-visible {
+  outline-color: #fff;
+}
+
+.notice__close {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-end: 8px;
+  display: grid;
+  place-items: center;
+  inline-size: 36px;
+  block-size: 36px;
+  font-size: 24px;
+  line-height: 1;
+  color: #fff;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: background-color var(--ease);
+}
+
+.notice__close:hover {
+  background: rgb(255 255 255 / 15%);
+}

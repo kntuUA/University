@@ -1,0 +1,66 @@
+/* Print: light colours whatever the theme, no interactive chrome or easter eggs */
+@media print {
+  [data-theme="dark"] {
+    --color-primary: #1e3c72;
+    --color-accent: #067a38;
+    --color-text: #1e293b;
+    --color-text-muted: #5b6b80;
+    --color-bg: #fff;
+    --color-surface: #fff;
+    --footer-bg: #fff;
+  }
+
+  html,
+  body {
+    background: #fff;
+  }
+
+  .skip-link,
+  .notice,
+  .nav,
+  .header__actions,
+  .konami-cat,
+  .konami-flash,
+  .matrix-rain,
+  .terminal,
+  .matrix-dialog {
+    display: none !important;
+  }
+
+  .header {
+    position: static;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+
+  .hero {
+    padding-block: 24px;
+    color: #000;
+    background: none;
+  }
+
+  .hero * {
+    color: #000;
+  }
+
+  .card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+
+  .footer,
+  .footer * {
+    color: #000;
+    background: none;
+  }
+
+  .footer a[href^="tel:"]::after {
+    content: "";
+  }
+
+  main a[href^="http"]::after {
+    font-size: 0.8em;
+    content: " (" attr(href) ")";
+  }
+}

@@ -1,72 +1,372 @@
 <!DOCTYPE html>
 <html lang="uk">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Вступна кампанія | ЦНТУ</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/021c6d66dc.js" crossorigin="anonymous" defer></script>
-  
-  <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title data-i18n="meta.title">Вступна кампанія 2026 | ЦНТУ — бакалаврат і магістратура</title>
+    <meta
+      name="description"
+      data-i18n-attr="content:meta.description"
+      content="Вступна кампанія ЦНТУ 2026: вступ на бакалаврат і магістратуру, умови вступу та контакти приймальної комісії Центральноукраїнського національного технічного університету.">
+    <link rel="canonical" href="https://kntuua.github.io/University/">
+    <meta name="theme-color" content="#1e3c72">
+    <meta name="color-scheme" content="light dark">
 
-  <script src="js/components.js"></script>
-</head>
-<body>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ЦНТУ">
+    <meta property="og:locale" content="uk_UA">
+    <meta property="og:title" content="Вступна кампанія 2026 | ЦНТУ">
+    <meta
+      property="og:description"
+      content="Обери своє майбутнє з ЦНТУ: бакалаврат і магістратура, контакти приймальної комісії.">
+    <meta property="og:url" content="https://kntuua.github.io/University/">
+    <meta property="og:image" content="https://kntuua.github.io/University/assets/img/og-cover.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Герб ЦНТУ на синьому тлі">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@CNTU1929">
+    <meta name="twitter:title" content="Вступна кампанія 2026 | ЦНТУ">
+    <meta name="twitter:description" content="Обери своє майбутнє з ЦНТУ: бакалаврат і магістратура.">
+    <meta name="twitter:image" content="https://kntuua.github.io/University/assets/img/og-cover.jpg">
 
-  <site-header></site-header>
+    <link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
 
-  <main class="main">
-    <section class="hero">
-      <div class="container hero__container">
-        <span class="badge">Вступ 2026</span>
-        <h1 class="hero__title">Обери своє майбутнє з ЦНТУ</h1>
-        <p class="hero__subtitle">Якісна освіта, сучасні спеціальності та реальні перспективи для кожного абітурієнта.</p>
-      </div>
-      <div class="wave-bottom">
-        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,42.7C1120,32,1280,32,1360,32L1440,32L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z" fill="#f8fafc"></path>
-        </svg>
-      </div>
+    <link rel="preload" href="assets/fonts/montserrat-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- window.CNTU core: theme before first paint, language + dictionary -->
+    <script src="assets/js/boot.js"></script>
+    <script src="assets/js/app.js" defer></script>
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#main" data-i18n="skip">Перейти до основного вмісту</a>
+
+    <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+      <symbol id="i-arrow" viewBox="0 0 24 24">
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M5 12h14M13 6l6 6-6 6"
+        />
+      </symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+      </symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <circle cx="12" cy="12" r="4.5" fill="currentColor" />
+          <path
+            d="M12 1.5v2.5M12 20v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M1.5 12H4M20 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"
+          />
+        </g>
+      </symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"
+        />
+      </symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 7v5l3 2" />
+        </g>
+      </symbol>
+      <symbol id="i-facebook" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"
+        />
+      </symbol>
+      <symbol id="i-x" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"
+        />
+      </symbol>
+      <symbol id="i-youtube" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+        />
+      </symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"
+        />
+      </symbol>
+    </svg>
+
+    <section class="notice" id="notice" aria-label="Важливе повідомлення" data-i18n-attr="aria-label:notice.label">
+      <p class="notice__text">
+        <span aria-hidden="true">⚠️</span> <strong data-i18n="notice.attention">Увага:</strong>
+        <span data-i18n="notice.text">Інформація на цьому сайті, на жаль, вже не актуальна. Перевіряйте деталі на</span>
+        <a href="https://www.kntu.kr.ua/" target="_blank" rel="noopener noreferrer"
+          ><span data-i18n="notice.link">офіційному сайті ЦНТУ</span
+          ><span class="visually-hidden" data-i18n="common.newTabLong"> (відкривається в новій вкладці)</span></a
+        >
+      </p>
+      <button
+        class="notice__close"
+        type="button"
+        id="noticeClose"
+        hidden
+        aria-label="Закрити повідомлення"
+        data-i18n-attr="aria-label:notice.close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
     </section>
 
-    <section class="admission-cards">
-      <div class="container container--small">
-        <div class="cards-grid">
-          
-          <article class="card">
-            <div class="card__image-wrapper bg-gradient-blue">
-              <img src="img/specialtiesTwo/1.webp" alt="Бакалаврат" class="card__img" loading="lazy">
-            </div>
-            <div class="card__content">
-              <div class="card__tag">Базова вища освіта</div>
-              <h2 class="card__title">Ступінь БАКАЛАВРА</h2>
-              <p class="card__desc">Для випускників шкіл, ліцеїв та коледжів.</p>
-              <a href="https://kntu.kr.ua/abiturientu/vstup-dlya-zdobuttya-stupenya-bakalavra" class="btn btn--primary">Дізнатись більше <i class="fas fa-arrow-right"></i></a>
-            </div>
-          </article>
+    <header class="header">
+      <div class="container header__container">
+        <a href="#top" class="logo" aria-label="ЦНТУ — на початок сторінки" data-i18n-attr="aria-label:header.logo">
+          <img src="assets/img/Gerb.webp" alt="" class="logo__img" width="80" height="98" fetchpriority="high">
+          <span class="logo__text" aria-hidden="true" data-i18n="brand.short">ЦНТУ</span>
+        </a>
 
-          <article class="card">
-            <div class="card__image-wrapper bg-gradient-green">
-              <img src="img/specialtiesTwo/2.webp" alt="Магістратура" class="card__img" loading="lazy">
-            </div>
-            <div class="card__content">
-              <div class="card__tag">Повна вища освіта</div>
-              <h2 class="card__title">Ступінь МАГІСТРА</h2>
-              <p class="card__desc">Для тих, хто вже має диплом бакалавра.</p>
-              <a href="https://kntu.kr.ua/abiturientu/vstup-dlya-zdobuttya-stupenya-magistra" class="btn btn--accent">Дізнатись більше <i class="fas fa-arrow-right"></i></a>
-            </div>
-          </article>
+        <nav class="nav" id="primary-nav" data-focus-fallback="#burger" aria-label="Основна навігація" data-i18n-attr="aria-label:nav.label">
+          <ul class="nav__list">
+            <li><a href="#programs" class="nav__link" data-i18n="nav.applicants">Абітурієнту</a></li>
+            <li><a href="#bachelor" class="nav__link" data-i18n="nav.bachelor">Бакалаврат</a></li>
+            <li><a href="#master" class="nav__link" data-i18n="nav.master">Магістратура</a></li>
+            <li><a href="#contacts" class="nav__link" data-i18n="nav.contacts">Контакти</a></li>
+            <li>
+              <a href="https://kntu.kr.ua/" class="nav__link" target="_blank" rel="noopener noreferrer"
+                ><span data-i18n="nav.university">Університет</span
+                ><span class="visually-hidden" data-i18n="nav.universityHint"> (офіційний сайт, нова вкладка)</span></a
+              >
+            </li>
+          </ul>
+        </nav>
 
+        <div class="header__actions">
+          <div class="lang-menu" id="langMenu" data-focus-fallback="#langMenuButton" hidden>
+            <!-- Accessible name starts with the visible code (WCAG 2.5.3 Label in Name) -->
+            <button
+              class="lang-menu__button"
+              type="button"
+              id="langMenuButton"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-controls="langMenuList"
+            >
+              <span class="lang-menu__code">UA</span><span class="visually-hidden"> — <span data-i18n="lang.menuLabel">Мова сайту</span>: <span class="lang-menu__current" lang="uk">Українська</span></span>
+              <svg class="lang-menu__caret" aria-hidden="true" focusable="false" viewBox="0 0 10 6" width="10" height="6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            </button>
+            <ul class="lang-menu__list" id="langMenuList" role="menu" aria-label="Оберіть мову" data-i18n-attr="aria-label:lang.listLabel" hidden>
+              <li role="none">
+                <button class="lang-menu__item" type="button" role="menuitemradio" aria-checked="true" lang="uk" data-lang="uk">
+                  <span class="lang-menu__item-code" aria-hidden="true">UA</span> Українська
+                </button>
+              </li>
+              <li role="none">
+                <button class="lang-menu__item" type="button" role="menuitemradio" aria-checked="false" lang="en" data-lang="en">
+                  <span class="lang-menu__item-code" aria-hidden="true">EN</span> English
+                </button>
+              </li>
+              <li role="none">
+                <button class="lang-menu__item" type="button" role="menuitemradio" aria-checked="false" lang="pl" data-lang="pl">
+                  <span class="lang-menu__item-code" aria-hidden="true">PL</span> Polski
+                </button>
+              </li>
+              <li role="none">
+                <button class="lang-menu__item" type="button" role="menuitemradio" aria-checked="false" lang="de" data-lang="de">
+                  <span class="lang-menu__item-code" aria-hidden="true">DE</span> Deutsch
+                </button>
+              </li>
+              <li role="none">
+                <button class="lang-menu__item" type="button" role="menuitemradio" aria-checked="false" lang="es" data-lang="es">
+                  <span class="lang-menu__item-code" aria-hidden="true">ES</span> Español
+                </button>
+              </li>
+              <li role="none">
+                <button class="lang-menu__item" type="button" role="menuitemradio" aria-checked="false" lang="ja" data-lang="ja">
+                  <span class="lang-menu__item-code" aria-hidden="true">JA</span> 日本語
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <button class="theme-toggle" type="button" id="themeToggle" aria-pressed="false" hidden>
+            <span class="visually-hidden" data-i18n="theme.dark">Темна тема</span>
+            <svg class="icon theme-toggle__moon" aria-hidden="true" focusable="false"><use href="#i-moon" /></svg>
+            <svg class="icon theme-toggle__sun" aria-hidden="true" focusable="false"><use href="#i-sun" /></svg>
+          </button>
+
+          <button class="burger" type="button" id="burger" aria-controls="primary-nav" aria-expanded="false" hidden>
+            <span class="visually-hidden">Меню</span>
+            <span class="burger__line" aria-hidden="true"></span>
+            <span class="burger__line" aria-hidden="true"></span>
+            <span class="burger__line" aria-hidden="true"></span>
+          </button>
         </div>
       </div>
-    </section>
-  </main>
+    </header>
 
-  <site-footer></site-footer>
+    <main class="main" id="main" tabindex="-1">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero__container">
+          <p class="hero__badge" data-i18n="hero.badge">Вступ 2026</p>
+          <h1 class="hero__title" id="hero-title" data-i18n="hero.title">Обери своє майбутнє з ЦНТУ</h1>
+          <p class="hero__subtitle" data-i18n="hero.subtitle">
+            Якісна освіта, сучасні спеціальності та реальні перспективи для кожного абітурієнта.
+          </p>
+        </div>
+        <div class="hero__wave" aria-hidden="true">
+          <svg viewBox="0 0 1440 120" preserveAspectRatio="none" focusable="false" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,42.7C1120,32,1280,32,1360,32L1440,32L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
+            />
+          </svg>
+        </div>
+      </section>
 
-  <script src="js/main.js"></script>
-</body>
+      <section class="programs" id="programs" aria-labelledby="programs-title">
+        <div class="container container--small">
+          <h2 class="visually-hidden" id="programs-title" data-i18n="programs.title">Освітні ступені</h2>
+          <div class="programs__grid">
+            <article class="card" id="bachelor" aria-labelledby="bachelor-title">
+              <div class="card__media card__media--blue">
+                <img
+                  src="assets/img/specialtiesTwo/1.webp"
+                  alt=""
+                  class="card__img"
+                  width="270"
+                  height="165"
+                  loading="lazy"
+                  decoding="async">
+              </div>
+              <div class="card__content">
+                <p class="card__tag" data-i18n="bachelor.tag">Базова вища освіта</p>
+                <h3 class="card__title" id="bachelor-title" data-i18n="bachelor.title">Ступінь БАКАЛАВРА</h3>
+                <p class="card__desc" data-i18n="bachelor.desc">Для випускників шкіл, ліцеїв та коледжів.</p>
+                <a
+                  href="https://kntu.kr.ua/abiturientu/vstup-dlya-zdobuttya-stupenya-bakalavra"
+                  class="btn btn--primary"
+                >
+                  <span data-i18n="common.learnMore">Дізнатись більше</span
+                  ><span class="visually-hidden" data-i18n="bachelor.moreHint"> про вступ на бакалаврат</span>
+                  <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow" /></svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="card" id="master" aria-labelledby="master-title">
+              <div class="card__media card__media--green">
+                <img
+                  src="assets/img/specialtiesTwo/2.webp"
+                  alt=""
+                  class="card__img"
+                  width="270"
+                  height="165"
+                  loading="lazy"
+                  decoding="async">
+              </div>
+              <div class="card__content">
+                <p class="card__tag" data-i18n="master.tag">Повна вища освіта</p>
+                <h3 class="card__title" id="master-title" data-i18n="master.title">Ступінь МАГІСТРА</h3>
+                <p class="card__desc" data-i18n="master.desc">Для тих, хто вже має диплом бакалавра.</p>
+                <a href="https://kntu.kr.ua/abiturientu/vstup-dlya-zdobuttya-stupenya-magistra" class="btn btn--accent">
+                  <span data-i18n="common.learnMore">Дізнатись більше</span
+                  ><span class="visually-hidden" data-i18n="master.moreHint"> про вступ на магістратуру</span>
+                  <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow" /></svg>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="contacts">
+      <div class="container footer__container">
+        <div class="footer__brand">
+          <p class="footer__logo-text" data-i18n="brand.short">ЦНТУ</p>
+          <p class="footer__text" data-i18n="footer.tagline">Твій простір для розвитку та інновацій.</p>
+          <nav aria-label="ЦНТУ в соцмережах" data-i18n-attr="aria-label:footer.socialLabel">
+            <ul class="footer__socials">
+              <li>
+                <a href="https://www.facebook.com/CNTU.kr.ua/" target="_blank" rel="noopener noreferrer"
+                  ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-facebook" /></svg
+                  ><span class="visually-hidden"
+                    >Facebook<span data-i18n="common.newTab"> (нова вкладка)</span></span
+                  ></a
+                >
+              </li>
+              <li>
+                <a href="https://x.com/CNTU1929" target="_blank" rel="noopener noreferrer"
+                  ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-x" /></svg
+                  ><span class="visually-hidden">X<span data-i18n="common.newTab"> (нова вкладка)</span></span></a
+                >
+              </li>
+              <li>
+                <a href="https://www.youtube.com/@universitycntu" target="_blank" rel="noopener noreferrer"
+                  ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-youtube" /></svg
+                  ><span class="visually-hidden">YouTube<span data-i18n="common.newTab"> (нова вкладка)</span></span></a
+                >
+              </li>
+              <li>
+                <a href="https://www.instagram.com/cntu.kr.ua/" target="_blank" rel="noopener noreferrer"
+                  ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-instagram" /></svg
+                  ><span class="visually-hidden"
+                    >Instagram<span data-i18n="common.newTab"> (нова вкладка)</span></span
+                  ></a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <section class="footer__col" aria-labelledby="commission-title">
+          <h2 class="footer__title" id="commission-title" data-i18n="footer.commission">Контакти комісії</h2>
+          <address class="footer__list">
+            <a href="tel:+380950785900"
+              ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-phone" /></svg
+              >(095)&nbsp;078&#8209;59&#8209;00</a
+            >
+            <a href="tel:+380522559313"
+              ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-phone" /></svg
+              >(0522)&nbsp;55&#8209;93&#8209;13</a
+            >
+            <span
+              ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-clock" /></svg
+              ><span data-i18n="footer.hours">Пн–Пт: 08:00–17:00</span></span
+            >
+          </address>
+        </section>
+
+        <section class="footer__col" aria-labelledby="prep-title">
+          <h2 class="footer__title" id="prep-title" data-i18n="footer.prep">Центр підготовки</h2>
+          <address class="footer__list">
+            <a href="tel:+380950862457"
+              ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-phone" /></svg
+              >(095)&nbsp;086&#8209;24&#8209;57</a
+            >
+            <a href="tel:+380522555018"
+              ><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-phone" /></svg
+              >(0522)&nbsp;55&#8209;50&#8209;18</a
+            >
+          </address>
+        </section>
+      </div>
+
+      <div class="footer__bottom">
+        <div class="container">
+          <p>
+            © <span data-current-year>2026</span>
+            <span data-i18n="footer.copyright"
+              >ЦНТУ. Всі права захищено. Використання матеріалів сайту можливе тільки з посиланням на джерело.</span
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

@@ -1,0 +1,12 @@
+/* Lines are children 2–4 (child 1 is the visually hidden label) */
+.burger[aria-expanded="true"] .burger__line:nth-child(2) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.burger[aria-expanded="true"] .burger__line:nth-child(3) {
+  opacity: 0;
+}
+
+.burger[aria-expanded="true"] .burger__line:nth-child(4) {
+  transform: translateY(-9px) rotate(-45deg);
+}

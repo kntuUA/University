@@ -1,0 +1,97 @@
+/* 11. FOOTER -------------------------------------------------------------- */
+
+.footer {
+  color: var(--footer-text);
+  background-color: var(--footer-bg);
+}
+
+.footer :focus-visible {
+  outline-color: var(--color-accent-bright);
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 50px;
+  padding-block: 70px;
+}
+
+.footer__logo-text {
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.footer__text {
+  margin-block-start: 10px;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 16px;
+  margin-block-start: 20px;
+}
+
+.footer__socials a {
+  display: grid;
+  place-items: center;
+  inline-size: var(--tap-size);
+  block-size: var(--tap-size);
+  color: #fff;
+  background: rgb(255 255 255 / 10%);
+  border-radius: 50%;
+  transition:
+    background-color var(--ease),
+    color var(--ease),
+    transform var(--ease);
+}
+
+.footer__socials a:hover {
+  color: #1e3c72;
+  background: var(--color-accent-bright);
+  transform: translateY(-3px);
+}
+
+.footer__socials .icon {
+  inline-size: 18px;
+  block-size: 18px;
+}
+
+.footer__title {
+  margin-block-end: 24px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.footer__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 15px;
+}
+
+.footer__list > * {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.footer__list a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footer__list .icon {
+  inline-size: 18px;
+  block-size: 18px;
+  color: var(--color-accent-bright);
+}
+
+.footer__bottom {
+  padding-block: 20px;
+  font-size: 14px;
+  text-align: center;
+  background: rgb(0 0 0 / 15%);
+}

@@ -1,0 +1,29 @@
+/* 15. REDUCED MOTION ------------------------------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .card:hover,
+  .card:focus-within,
+  .card:hover .card__img,
+  .btn:hover,
+  .theme-toggle:hover,
+  .footer__socials a:hover {
+    transform: none;
+  }
+
+  .logo--glitch .logo__img,
+  .matrix-dialog__screen::after {
+    animation: none;
+  }
+}

@@ -1,0 +1,192 @@
+/* 13. MATRIX EASTER EGG (assets/js/app.js → initMatrixEgg) ---------------------- */
+
+.matrix-mode {
+  color-scheme: dark;
+
+  --color-primary: #00ff41;
+  --color-accent: #00ff41;
+  --color-accent-bright: #00ff41;
+  --color-text: #b6ffc8;
+  --color-text-muted: #6fdc8c;
+  --color-bg: #000;
+  --color-surface: #031a09;
+  --color-border: rgb(0 255 65 / 25%);
+  --header-bg: rgb(0 0 0 / 90%);
+  --nav-mobile-bg: rgb(0 0 0 / 98%);
+  --hero-from: #000;
+  --hero-to: #021f0b;
+  --btn-primary-bg: #006b1b;
+  --btn-primary-bg-hover: #008a23;
+  --btn-accent-from: #006b1b;
+  --btn-accent-to: #005316;
+  --notice-bg: #002b0b;
+  --footer-bg: #000;
+  --footer-text: #6fdc8c;
+  --card-media-blue: linear-gradient(135deg, #001a07 0%, #003b10 100%);
+  --card-media-green: linear-gradient(135deg, #001a07 0%, #003b10 100%);
+  --font-main: var(--font-mono);
+}
+
+.matrix-mode img {
+  filter: grayscale(1) sepia(1) hue-rotate(70deg) saturate(4) brightness(0.85);
+}
+
+.matrix-rain {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  inline-size: 100%;
+  block-size: 100%;
+  pointer-events: none; /* the logo stays clickable: 7 more clicks exit */
+  transition: opacity 1s ease;
+}
+
+.matrix-rain.is-fading {
+  opacity: 0.35;
+}
+
+.matrix-dialog {
+  inline-size: min(92vw, 560px);
+  max-block-size: 85vh;
+  margin: auto;
+  padding: 28px 24px 24px;
+  overflow: auto;
+  font-family: var(--font-mono);
+  color: #00ff41;
+  background: rgb(0 8 2 / 94%);
+  border: 1px solid #00ff41;
+  border-radius: 8px;
+  box-shadow:
+    0 0 24px rgb(0 255 65 / 35%),
+    inset 0 0 24px rgb(0 255 65 / 8%);
+}
+
+.matrix-dialog::backdrop {
+  background: rgb(0 0 0 / 55%);
+}
+
+.matrix-dialog :focus-visible {
+  outline-color: #eafff0;
+}
+
+.matrix-dialog__title {
+  margin-block-end: 12px;
+  font-size: 13px;
+  font-weight: 400;
+  color: #6fdc8c;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.matrix-dialog__screen {
+  min-block-size: 7.5em;
+  margin-block-end: 16px;
+  font: inherit;
+  font-size: 15px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  text-shadow: 0 0 6px rgb(0 255 65 / 60%);
+}
+
+.matrix-dialog__screen::after {
+  content: "▌";
+  animation: matrix-caret 1s steps(1) infinite;
+}
+
+.matrix-dialog__label {
+  display: block;
+  margin-block-end: 6px;
+  font-size: 13px;
+  color: #6fdc8c;
+}
+
+.matrix-dialog__row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.matrix-dialog__input {
+  flex: 1;
+  min-inline-size: 0;
+  padding: 8px 10px;
+  font: inherit;
+  color: #eafff0;
+  background: #000;
+  border: 1px solid #00ff41;
+  border-radius: 4px;
+}
+
+.matrix-dialog__submit {
+  padding: 8px 14px;
+  font-weight: 700;
+  color: #000;
+  background: #00ff41;
+  border-radius: 4px;
+}
+
+.matrix-dialog__feedback {
+  min-block-size: 1.6em;
+  margin-block-start: 14px;
+  font-size: 14px;
+}
+
+.matrix-dialog__feedback.is-correct {
+  color: #eafff0;
+  text-shadow: 0 0 8px #00ff41;
+}
+
+.matrix-dialog__feedback.is-wrong {
+  color: #ff6b6b;
+}
+
+.matrix-dialog__close {
+  position: absolute;
+  inset-block-start: 6px;
+  inset-inline-end: 6px;
+  display: grid;
+  place-items: center;
+  inline-size: var(--tap-size);
+  block-size: var(--tap-size);
+  font-size: 26px;
+  color: #00ff41;
+  border-radius: 50%;
+}
+
+.matrix-dialog__close:hover {
+  background: rgb(0 255 65 / 12%);
+}
+
+.logo--glitch .logo__img {
+  animation: logo-glitch 0.4s ease;
+}
+
+@keyframes logo-glitch {
+  0%,
+  100% {
+    transform: none;
+  }
+
+  20% {
+    transform: translateX(-3px) rotate(-4deg);
+  }
+
+  40% {
+    transform: translateX(3px) rotate(4deg);
+    filter: hue-rotate(90deg);
+  }
+
+  60% {
+    transform: translateX(-2px) rotate(-2deg);
+  }
+
+  80% {
+    transform: translateX(2px);
+  }
+}
+
+@keyframes matrix-caret {
+  50% {
+    opacity: 0;
+  }
+}

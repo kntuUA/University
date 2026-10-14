@@ -1,0 +1,10 @@
+{
+  "name": "ЦНТУ — Вступна кампанія",
+  "short_name": "ЦНТУ",
+  "lang": "uk",
+  "start_url": "./",
+  "display": "browser",
+  "background_color": "#f8fafc",
+  "theme_color": "#1e3c72",
+  "icons": [{ "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+}

@@ -1,0 +1,46 @@
+/* 10. BUTTONS ------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  inline-size: 100%;
+  padding: 14px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: var(--radius-pill);
+  transition:
+    transform var(--ease),
+    box-shadow var(--ease),
+    background-color var(--ease),
+    filter var(--ease);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn--primary {
+  background: var(--btn-primary-bg);
+  box-shadow: 0 4px 15px rgb(30 60 114 / 30%);
+}
+
+.btn--primary:hover {
+  background: var(--btn-primary-bg-hover);
+  box-shadow: 0 8px 25px rgb(30 60 114 / 40%);
+}
+
+.btn--accent {
+  background: linear-gradient(to right, var(--btn-accent-from), var(--btn-accent-to));
+  box-shadow: 0 4px 15px rgb(11 170 78 / 30%);
+}
+
+.btn--accent:hover {
+  box-shadow: 0 8px 25px rgb(11 170 78 / 40%);
+  filter: brightness(1.08);
+}

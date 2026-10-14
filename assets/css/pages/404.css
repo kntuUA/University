@@ -1,0 +1,394 @@
+/* ==========================================================================
+   404 — two modes (see the inline script in 404.html)
+   Day (default, also without JS): a clean 404 in the site style, light/dark theme.
+   Night (.is-night on <html>, 00:00–04:59 local time): «Корпус, якого немає на карті»,
+   dark-only by design. Reuses fonts and tokens from style.css.
+   ========================================================================== */
+
+/* Mode switch */
+html:not(.is-night) .nf__main,
+.is-night .nf-day {
+  display: none;
+}
+
+/* DAY ---------------------------------------------------------------------- */
+
+.nf-page {
+  display: grid;
+  flex: 1;
+  place-items: center;
+}
+
+.nf-day {
+  inline-size: min(100% - 48px, 560px);
+  padding-block: 64px;
+  text-align: center;
+}
+
+.nf-day__code {
+  font-size: clamp(72px, 18vw, 140px);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--color-primary);
+  letter-spacing: 0.04em;
+}
+
+.nf-day__title {
+  margin-block: 16px 12px;
+  font-size: clamp(22px, 1.2rem + 1.5vw, 32px);
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.nf-day__text {
+  margin-block-end: 32px;
+  color: var(--color-text-muted);
+}
+
+.nf-day__home {
+  inline-size: auto;
+}
+
+/* Barely-there hint (decorative easter egg; real content never depends on it) */
+.nf-day__hint {
+  margin-block-start: 48px;
+  font-size: 11px;
+  color: var(--color-text-muted);
+  letter-spacing: 0.2em; /* subtle by size and spacing; muted colour keeps 5.4:1 contrast */
+}
+
+/* NIGHT -------------------------------------------------------------------- */
+
+/* Translated lines carry "\n" instead of <br> (assets/js/pages/404.js) */
+.nf__text {
+  white-space: pre-line;
+}
+
+.is-night .nf {
+  --nf-bg: #05070d;
+  --nf-text: #c9d4e5;
+  --nf-dim: #8593a8; /* 6.3:1 on --nf-bg */
+  --nf-signal: #ff4d5e;
+  --nf-glow: rgb(0 255 65 / 70%);
+
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-block-size: 100vh;
+  overflow: hidden;
+  color: var(--nf-text);
+  background: radial-gradient(ellipse at center, #0d1324 0%, var(--nf-bg) 70%);
+}
+
+/* CRT: scanlines + vignette (decorative, never intercepts clicks) */
+.is-night .nf::before,
+.is-night .nf::after {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+}
+
+.is-night .nf::before {
+  z-index: 2;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgb(255 255 255 / 3%) 0,
+    rgb(255 255 255 / 3%) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+.is-night .nf::after {
+  z-index: 3;
+  background: radial-gradient(ellipse at center, transparent 55%, rgb(0 0 0 / 65%) 100%);
+  animation: nf-flicker 6s infinite steps(1);
+}
+
+.is-night .nf__main {
+  position: relative;
+  z-index: 1;
+  inline-size: min(100% - 48px, 640px);
+  padding-block: 48px;
+}
+
+/* ERROR 404 with a chromatic glitch */
+.is-night .nf__code {
+  position: relative;
+  margin-block-end: 40px;
+  font-size: clamp(40px, 9vw, 88px);
+  font-weight: 800;
+  line-height: 1;
+  color: #fff;
+  letter-spacing: 0.06em;
+  text-shadow: 0 0 18px rgb(255 77 94 / 35%);
+  animation: nf-flicker-text 4s infinite;
+}
+
+.is-night .nf__code::before,
+.is-night .nf__code::after {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  content: attr(data-text);
+}
+
+.is-night .nf__code::before {
+  opacity: 0;
+  color: var(--nf-signal);
+  transform: translateX(-2px);
+  animation: nf-glitch-top 2.8s infinite steps(1);
+  clip-path: inset(0 0 60% 0);
+}
+
+.is-night .nf__code::after {
+  opacity: 0;
+  color: #3cf;
+  transform: translateX(2px);
+  animation: nf-glitch-bottom 3.4s infinite steps(1);
+  clip-path: inset(55% 0 0 0);
+}
+
+/* Security log */
+.is-night .nf__log {
+  font-family: var(--font-mono);
+  font-size: clamp(16px, 2.4vw, 20px);
+  line-height: 1.7;
+}
+
+.is-night .nf__line + .nf__line {
+  margin-block-start: 24px;
+}
+
+.is-night .nf__line {
+  opacity: 0;
+  animation: nf-reveal 0.6s ease forwards;
+}
+
+.is-night .nf__line:nth-of-type(1) {
+  animation-delay: 0.9s;
+}
+
+.is-night .nf__line:nth-of-type(2) {
+  animation-delay: 2.1s;
+}
+
+.is-night .nf__time {
+  padding: 0;
+  font: inherit;
+  color: var(--nf-signal);
+  text-shadow: 0 0 8px rgb(255 77 94 / 45%);
+  cursor: help;
+  background: none;
+  border: 0;
+  border-block-end: 1px dotted transparent;
+  transition: border-color 0.3s ease;
+}
+
+.is-night .nf__time:hover,
+.is-night .nf__time:focus-visible,
+.is-night .nf__time[aria-expanded="true"] {
+  border-block-end-color: currentcolor;
+}
+
+.is-night .nf__cursor {
+  display: inline-block;
+  inline-size: 0.6em;
+  block-size: 1.1em;
+  margin-inline-start: 4px;
+  vertical-align: text-bottom;
+  background: var(--nf-text);
+  animation: nf-blink 1s steps(1) infinite;
+}
+
+/* Secret: appears on hover / focus / tap (long-press on touch) of 03:17 */
+.is-night .nf__secret {
+  max-block-size: 0;
+  margin-block-start: 0;
+  overflow: hidden;
+  font-size: 14px;
+  color: #6fdc8c;
+  text-shadow: 0 0 6px var(--nf-glow);
+  opacity: 0;
+  transition:
+    opacity 0.6s ease,
+    max-block-size 0.6s ease,
+    margin 0.6s ease;
+}
+
+.is-night .nf__log:has(.nf__time:hover) .nf__secret,
+.is-night .nf__log:has(.nf__time:focus-visible) .nf__secret,
+.is-night .nf__log:has(.nf__time[aria-expanded="true"]) .nf__secret {
+  max-block-size: 6em;
+  margin-block-start: 16px;
+  opacity: 1;
+}
+
+.is-night .nf__home {
+  display: inline-block;
+  margin-block-start: 48px;
+  padding-block: 4px;
+  font-size: 14px;
+  color: var(--nf-dim);
+  letter-spacing: 0.04em;
+  border-block-end: 1px solid rgb(133 147 168 / 40%);
+  opacity: 0;
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
+  animation: nf-reveal 0.8s ease 3.4s forwards;
+}
+
+.is-night .nf__home::before {
+  content: "← ";
+}
+
+.is-night .nf__home:hover {
+  color: #fff;
+  border-color: currentcolor;
+}
+
+@keyframes nf-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+    filter: blur(2px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+@keyframes nf-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes nf-flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  47% {
+    opacity: 0.85;
+  }
+
+  48% {
+    opacity: 1;
+  }
+
+  82% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes nf-flicker-text {
+  0%,
+  19%,
+  21%,
+  62%,
+  64%,
+  100% {
+    opacity: 1;
+  }
+
+  20%,
+  63% {
+    opacity: 0.55;
+  }
+}
+
+@keyframes nf-glitch-top {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 0.9;
+    transform: translateX(-6px);
+    clip-path: inset(10% 0 70% 0);
+  }
+
+  34% {
+    opacity: 0;
+  }
+
+  66% {
+    opacity: 0.9;
+    transform: translateX(3px);
+    clip-path: inset(30% 0 45% 0);
+  }
+
+  69% {
+    opacity: 0;
+  }
+}
+
+@keyframes nf-glitch-bottom {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0.9;
+    transform: translateX(6px);
+    clip-path: inset(70% 0 5% 0);
+  }
+
+  44% {
+    opacity: 0;
+  }
+
+  80% {
+    opacity: 0.9;
+    transform: translateX(-3px);
+    clip-path: inset(50% 0 25% 0);
+  }
+
+  83% {
+    opacity: 0;
+  }
+}
+
+/* Reduced motion: everything visible at once, no flicker/glitch/blink */
+@media (prefers-reduced-motion: reduce) {
+  .is-night .nf::after,
+  .is-night .nf__code,
+  .is-night .nf__code::before,
+  .is-night .nf__code::after,
+  .is-night .nf__cursor,
+  .is-night .nf__line,
+  .is-night .nf__home {
+    opacity: 1;
+    animation: none;
+  }
+
+  .is-night .nf__code::before,
+  .is-night .nf__code::after {
+    display: none;
+  }
+}
+
+/* Print: plain dark-on-white text, no glitch effects */
+@media print {
+  html,
+  body,
+  html.is-night {
+    color: #000;
+    background: #fff;
+  }
+
+  .nf__code::before,
+  .nf__code::after,
+  .nf__cursor {
+    display: none;
+  }
+}

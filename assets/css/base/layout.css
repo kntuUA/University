@@ -1,0 +1,20 @@
+/* 5. LAYOUT --------------------------------------------------------------- */
+
+.container {
+  inline-size: 100%;
+  max-inline-size: 1280px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+.container--small {
+  max-inline-size: 1000px;
+}
+
+.main {
+  flex: 1;
+}
+
+.main:focus {
+  outline: none;
+}

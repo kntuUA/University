@@ -1,0 +1,26 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "selector-class-pattern": [
+      "^(?:[a-z][a-z0-9]*(?:-[a-z0-9]+)*)(?:__[a-z0-9]+(?:-[a-z0-9]+)*)?(?:--[a-z0-9]+(?:-[a-z0-9]+)*)?$|^(is|js)(-[a-z]+)*$|^i18n-pending$",
+      {
+        "message": "Use BEM: block__element--modifier"
+      }
+    ],
+    "media-feature-range-notation": "prefix",
+    "property-no-vendor-prefix": [
+      true,
+      {
+        "ignoreProperties": ["/backdrop-filter/", "/text-size-adjust/", "/font-smoothing/"]
+      }
+    ],
+    "declaration-no-important": null,
+    "no-descending-specificity": null,
+    "value-keyword-case": [
+      "lower",
+      {
+        "ignoreProperties": ["font-family", "/^--font/"]
+      }
+    ]
+  }
+}

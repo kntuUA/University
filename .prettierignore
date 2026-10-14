@@ -1,0 +1,9 @@
+node_modules/
+package-lock.json
+*.min.*
+index.html
+404.html
+secret.html
+tests/.output/
+assets/js/boot.js
+assets/js/app.js

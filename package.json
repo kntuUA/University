@@ -1,0 +1,34 @@
+{
+  "name": "cntu-admissions",
+  "private": true,
+  "type": "module",
+  "description": "Static admissions page. No build step: open index.html or serve the folder. Dev tooling only.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "lint": "npm run lint:build && npm run format:check && npm run lint:js && npm run lint:css && npm run lint:html && npm run lint:head && npm run lint:i18n",
+    "lint:build": "node scripts/build.mjs --check",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint:js": "eslint assets/js",
+    "lint:css": "stylelint \"assets/css/**/*.css\" \"!assets/css/main.css\"",
+    "lint:html": "html-validate index.html 404.html secret.html",
+    "lint:head": "node scripts/check-head.mjs",
+    "lint:i18n": "node scripts/i18n-check.mjs",
+    "test": "node scripts/test.mjs",
+    "test:visual": "node scripts/visual-diff.mjs",
+    "serve": "python3 -m http.server 8000",
+    "serve:pages": "node scripts/serve.mjs 8000 /University"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.12.0",
+    "globals": "^17.13.0",
+    "html-validate": "^8.29.0",
+    "pixelmatch": "^7.2.0",
+    "pngjs": "^7.0.0",
+    "prettier": "^3.9.10",
+    "puppeteer-core": "^25.13.0",
+    "stylelint": "^17.16.0",
+    "stylelint-config-standard": "^40.0.0"
+  }
+}

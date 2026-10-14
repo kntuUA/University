@@ -1,0 +1,193 @@
+/* 16. KONAMI CAT (assets/js/features/konami-cat.js) ------------------------------------------- */
+
+.konami-flash {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  pointer-events: none;
+  background: #3f6;
+  animation: konami-flash 300ms ease-out forwards;
+}
+
+@keyframes konami-flash {
+  from {
+    opacity: 0.55;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.konami-cat {
+  position: fixed;
+  inset-block-end: max(12px, env(safe-area-inset-bottom));
+  inset-inline-start: 12px;
+  z-index: 900;
+  opacity: 0;
+  transform: translateY(-60vh);
+  transition:
+    transform 600ms cubic-bezier(0.3, 1.4, 0.6, 1),
+    opacity 200ms ease;
+}
+
+.konami-cat.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+.konami-cat__button {
+  display: block;
+  padding: 0;
+  line-height: 0;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  border-radius: 8px;
+}
+
+.konami-cat__button:focus-visible {
+  outline: 3px solid #3f6;
+  outline-offset: 3px;
+}
+
+.konami-cat__svg {
+  display: block;
+  inline-size: 64px;
+  block-size: 64px;
+  image-rendering: pixelated;
+}
+
+.konami-cat__fur {
+  fill: #111;
+}
+
+.konami-cat__nose {
+  fill: #2a2a2a;
+}
+
+.konami-cat__eye {
+  fill: #3f6;
+}
+
+.konami-cat__pupil,
+.konami-cat__slit {
+  fill: #000;
+}
+
+.konami-cat__brow {
+  fill: #2a2a2a;
+}
+
+.konami-cat__mark {
+  fill: #3f6;
+}
+
+.konami-cat__sweat {
+  fill: #6cf;
+}
+
+[data-theme="dark"] .konami-cat__svg {
+  filter: drop-shadow(0 0 1px #3f6) drop-shadow(0 0 4px rgb(51 255 102 / 45%));
+}
+
+.konami-cat__pose--sit,
+.konami-cat__lids,
+.konami-cat__sus,
+.konami-cat__deadpan,
+.konami-cat.is-deadpan .konami-cat__eyes,
+.konami-cat.is-deadpan .konami-cat__lids,
+.konami-cat.is-suspicious .konami-cat__eyes,
+.konami-cat.is-suspicious .konami-cat__lids,
+.konami-cat.is-happy .konami-cat__eyes,
+.konami-cat.is-sitting .konami-cat__pose--stand,
+.konami-cat.is-blinking .konami-cat__eyes {
+  display: none;
+}
+
+.konami-cat.is-sitting .konami-cat__pose--sit,
+.konami-cat.is-blinking .konami-cat__lids,
+.konami-cat.is-happy .konami-cat__lids,
+.konami-cat.is-suspicious .konami-cat__sus,
+.konami-cat.is-deadpan .konami-cat__deadpan {
+  display: inline;
+}
+
+.konami-cat__tail {
+  transform-box: fill-box;
+  transform-origin: 0 100%;
+}
+
+.konami-cat.is-purring .konami-cat__tail,
+.konami-cat.is-swishing .konami-cat__tail {
+  animation: konami-wiggle 150ms steps(2) 4 alternate;
+}
+
+.konami-cat.is-purring .konami-cat__button {
+  animation: konami-purr 100ms steps(2) 6 alternate;
+}
+
+@keyframes konami-wiggle {
+  to {
+    transform: rotate(-20deg);
+  }
+}
+
+@keyframes konami-purr {
+  to {
+    transform: translateX(1px);
+  }
+}
+
+.konami-cat__bubble {
+  position: absolute;
+  inset-block-end: calc(100% + 10px);
+  inset-inline-start: 0;
+  inline-size: max-content;
+  max-inline-size: min(260px, calc(100vw - 24px));
+  margin: 0;
+  padding: 6px 10px;
+  font-family: "Courier New", var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: #3f6;
+  background: #0b0b0b;
+  border: 2px solid #3f6;
+  box-shadow: 4px 4px 0 rgb(0 0 0 / 35%);
+  pointer-events: none;
+  opacity: 0; /* not visibility:hidden — keeps the live region announceable */
+}
+
+.konami-cat__bubble::after {
+  position: absolute;
+  inset-block-start: 100%;
+  inset-inline-start: 22px;
+  inline-size: 8px;
+  block-size: 8px;
+  content: "";
+  background: #3f6;
+}
+
+.konami-cat.is-terminal .konami-cat__bubble {
+  font-weight: 400;
+  background: #000;
+}
+
+.konami-cat.has-bubble .konami-cat__bubble {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .konami-flash {
+    background: rgb(51 255 102 / 8%);
+    animation: none;
+  }
+
+  .konami-cat,
+  .konami-cat.is-purring .konami-cat__tail,
+  .konami-cat.is-swishing .konami-cat__tail,
+  .konami-cat.is-purring .konami-cat__button {
+    transition: none;
+    animation: none;
+  }
+}

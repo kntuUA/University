@@ -1,0 +1,74 @@
+/* 2. TOKENS — every text/background pair meets WCAG AA (≥ 4.5:1) ---------- */
+
+:root {
+  color-scheme: light;
+
+  /* Brand & text */
+  --color-primary: #1e3c72; /* 10.8:1 on white */
+  --color-accent: #067a38; /* 5.5:1 on white */
+  --color-accent-bright: #2ee59d; /* decorative only (lines, icons) */
+  --color-text: #1e293b;
+  --color-text-muted: #5b6b80; /* 5.4:1 on white */
+  --color-on-dark: #fff;
+  --color-bg: #f8fafc;
+  --color-surface: #fff;
+  --color-border: rgb(15 23 42 / 6%);
+  --color-focus: #f59e0b;
+
+  /* Components */
+  --header-bg: rgb(255 255 255 / 90%);
+  --nav-mobile-bg: rgb(255 255 255 / 98%);
+  --hero-from: #1e3c72;
+  --hero-to: #2a5298;
+  --btn-primary-bg: #1e3c72;
+  --btn-primary-bg-hover: #2a5298;
+  --btn-accent-from: #08803c; /* white text 5.0:1 */
+  --btn-accent-to: #066b32; /* white text 6.6:1 */
+  --notice-bg: #92400e; /* white text 7.1:1 */
+  --footer-bg: #1e3c72;
+  --footer-text: rgb(255 255 255 / 85%);
+  --card-media-blue: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+  --card-media-green: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
+
+  /* Type, shape, motion */
+  --font-cjk:
+    "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Yu Gothic", Meiryo,
+    "Noto Sans JP", "Noto Sans CJK JP";
+  --font-main:
+    Montserrat, system-ui, -apple-system, "Segoe UI", Roboto, var(--font-cjk), sans-serif;
+  --font-mono:
+    ui-monospace, "Cascadia Mono", "DejaVu Sans Mono", Consolas, "Courier New",
+    "Noto Sans Mono CJK JP", "MS Gothic", "Osaka-Mono", var(--font-cjk), monospace;
+  --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 10%);
+  --shadow-lg: 0 20px 40px -5px rgb(30 60 114 / 15%);
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+  --tap-size: 44px;
+  --header-h: 74px; /* updated from JS with the real header height */
+  --ease: 0.3s ease;
+  --ease-bounce: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-primary: #8fa8ff; /* 6.4:1 on #1e293b */
+  --color-accent: #34d399; /* 7.6:1 on #1e293b */
+  --color-text: #f1f5f9;
+  --color-text-muted: #a3b1c6;
+  --color-bg: #0f172a;
+  --color-surface: #1e293b;
+  --color-border: rgb(255 255 255 / 8%);
+  --header-bg: rgb(15 23 42 / 90%);
+  --nav-mobile-bg: rgb(15 23 42 / 98%);
+  --hero-from: #1e3a8a;
+  --hero-to: #2f50d3;
+  --btn-primary-bg: #2f50d3; /* white text 6.5:1 */
+  --btn-primary-bg-hover: #3b5ee0;
+  --notice-bg: #78350f;
+  --footer-bg: #111c33;
+  --card-media-blue: linear-gradient(135deg, #1e3a8a 0%, #312e81 100%);
+  --card-media-green: linear-gradient(135deg, #064e3b 0%, #0f766e 100%);
+  --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 50%);
+  --shadow-lg: 0 20px 40px -5px rgb(0 0 0 / 70%);
+}
